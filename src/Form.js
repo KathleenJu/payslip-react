@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Input, Button, Card} from '@myob/myob-widgets';
+import { Redirect, Link } from 'react-router-dom';
+import ButtonRow from '@myob/myob-widgets/lib/components/ButtonRow/ButtonRow';
 
 class Form extends Component {
     state = {
@@ -19,6 +21,8 @@ class Form extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+    this.setState(() => { return <Redirect to="/payslip" push={true}/>});
+        
         // const result = calculate(this.state.userInput);
         // this.setState({ calcResult: result });
     };
@@ -39,10 +43,11 @@ class Form extends Component {
                         </div>
                     }
                     footer={
-                        <div className="bottom-right">
+                        <ButtonRow>
                             <Button type="secondary">Cancel</Button>
+                            
                             <Button id="get-payslip-button" type="primary" onClick={(e) => this.handleSubmit(e)}>Get Payslip</Button>
-                        </div>
+                        </ButtonRow>
                     }
                 />
             </div>

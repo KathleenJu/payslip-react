@@ -9,10 +9,10 @@ class App extends Component {
     return (
         <Router>
           <div className='container'>
-          <NavBar/>
-          <Route exact path={'/'} component={Form}/>
-         <Route path={'/payslip'} component={PaySlip}/>
-         </div>
+            <NavBar/>
+            <Route exact path={'/'} component={Form}/>
+            <Route path={'/payslip'} component={PaySlip}/>
+          </div>
         </Router>
     );
   }
